@@ -1,0 +1,57 @@
+{
+  "file": "playlist.m4a",
+  "bytes": 79772520,
+  "sha256": "d52f2727bf73dcf836a100e3fb03b1ccc40eda45fe9268d798dcc5fcd8ed479a",
+  "parts": [
+    {
+      "file": "playlist.00.part",
+      "bytes": 8388608,
+      "sha256": "e672d7aa5ce4402663d49fcbce32c59df1fb87e81d9788eba928284098404ea7"
+    },
+    {
+      "file": "playlist.01.part",
+      "bytes": 8388608,
+      "sha256": "9ac50770031cc4059a2dbee2af79b4469d1d5fbff5adcc9c1c409e3dadf18c7a"
+    },
+    {
+      "file": "playlist.02.part",
+      "bytes": 8388608,
+      "sha256": "7347a68a6a5541d734a5ee8e7e9cbd4191cb1094843502ec6970571b5e082d18"
+    },
+    {
+      "file": "playlist.03.part",
+      "bytes": 8388608,
+      "sha256": "7dee2dc577df4512105b7ab504e36fa0d60b9607764d723a1890f206bb5a8f0e"
+    },
+    {
+      "file": "playlist.04.part",
+      "bytes": 8388608,
+      "sha256": "8713168624dc746b529611e8499eeaa3dc8cd8291f36cdf841626ccb7c4e4846"
+    },
+    {
+      "file": "playlist.05.part",
+      "bytes": 8388608,
+      "sha256": "db58e7aa5121d0d253ed555b2740d22176fc949ce94b048682543f114dc3ee99"
+    },
+    {
+      "file": "playlist.06.part",
+      "bytes": 8388608,
+      "sha256": "f45537b7caeadca8fab8bc87af93367ad13b403b15f25f2b336d6703ae9e2148"
+    },
+    {
+      "file": "playlist.07.part",
+      "bytes": 8388608,
+      "sha256": "745d6883f775f2e300905269d7628f13fc0d34cbc8a745296514a64902803153"
+    },
+    {
+      "file": "playlist.08.part",
+      "bytes": 8388608,
+      "sha256": "6d7f8e9c1e1de45bb204986f6de21a5dd0213324433a418ce849e3c6469d9198"
+    },
+    {
+      "file": "playlist.09.part",
+      "bytes": 4275048,
+      "sha256": "d171ff47ea21075964fc23310f2c84d646778aecdc6d2c75af17c531267a29f1"
+    }
+  ]
+}

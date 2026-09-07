@@ -25,3 +25,8 @@ Production consumes ingredients and captures batch costs. Purchases add inventor
 Debug signing key is cached between CI builds. Export a game backup before replacing an installation: if a cache is evicted, Android may reject an update signed by a new key. Permanent production signing should be configured before public store distribution. This is a privately distributed playable game, not a Play Store release.
 
 Game source uses Canvas 2D artwork and local assets only; no third-party map tiles or runtime network calls. Landscape orientation is preferred; narrow windows remain supported. All gameplay text is English.
+
+## v1.1 — offline music
+Wahh Air Intro plays on launch. Starting a new game moves to Wahh Air!; otherwise the intro completes first. Background order is Wahh Air! → supplied BIGBANG playlist → Wahh Air!, indefinitely. The intro is not repeated in the background loop. Founder has volume, mute and next-track controls; sale sound effects retain a separate switch. Music pauses on backgrounding/audio focus loss and resumes at its position when returning. Music tempo is independent of game speed.
+
+Audio is bundled offline. Playlist is complete (about 1h47m), encoded AAC 96kbps; the two MP3 files are unchanged. Playlist source parts are reconstructed and SHA256-checked by scripts/assemble_audio.py before compilation. Android uses one native MediaPlayer with audio focus, so browser autoplay restrictions do not block launch audio. No game save data is reset; v1 saves gain default music settings. CI compares the signing certificate to v1.0 before publishing the APK.
