@@ -1,0 +1,47 @@
+name: Build and test Tycoon WAHH AIR
+on: [push, workflow_dispatch]
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test simulation engine
+        run: node tests/engine.test.cjs
+      - name: Install browser test tools
+        run: |
+          npm install --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Test game interface and capture screens
+        run: npm run test:ui
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Restore game signing key
+        uses: actions/cache@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: wahh-tycoon-debug-signing-v1
+      - name: Build Android APK
+        run: gradle :app:assembleDebug --no-daemon
+      - name: Verify APK signature and package
+        run: |
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose app/build/outputs/apk/debug/app-debug.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging app/build/outputs/apk/debug/app-debug.apk > qa/apk-package.txt
+          cp app/build/outputs/apk/debug/app-debug.apk qa/Tycoon-WAHH-AIR-v1.0.apk
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Tycoon-WAHH-AIR
+          path: qa/
+          if-no-files-found: warn
