@@ -33,3 +33,7 @@ Audio is bundled offline. Playlist is complete (about 1h47m), encoded AAC 96kbps
 
 Growth button HTML quoting fixed and tested via actual clicks.
 Version 1.1 installs separately as com.wahhair.tycoon.v11 because the original CI signing key was not saved. Export from Founder in v1.0 and import in v1.1; keep the original app until migration is verified. Native confirmation dialogs now support save import. Signing uses an explicit keystore path cached by CI.
+
+## Android 2.0 — Counter service
+New primary counter scene evolves from a Senawang home to stall, kiosk and store. Take cup/bottle, choose flavour, hold ingredients to pour, mix, lid, then tap Serve or drag the finished drink to a customer. Customer patience, recipe accuracy, tips, waste and rider trays affect actual inventory and ledger. An active branch is served manually; other branches retain batch sales. Brewer staff can serve prepared rider bottles.
+Easy permits RM100–1000 starting cash; Normal uses RM500 and Hard RM300. Campaign difficulty and capital are locked. Solo owner payouts or adjustable partner splits use the current owner name and preserve old payout names. Old saves migrate without resetting cash or progression; legacy Wan/Husein withdrawal fields remain in exported saves.

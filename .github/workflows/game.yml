@@ -16,6 +16,7 @@ jobs:
       - name: Test simulation and music
         run: |
           node tests/engine.test.cjs
+          node tests/service.test.cjs
           node tests/music.test.cjs
       - name: Install browser test tools
         run: |
@@ -53,8 +54,9 @@ jobs:
         run: |
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs app/build/outputs/apk/debug/app-debug.apk > qa/signature.txt
           grep -F -f signing/expected.txt qa/signature.txt
+          grep -F c207a3232b17947e87025529edb096bfbd47f5497bf52794a35d3cbba3102db3 qa/signature.txt
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging app/build/outputs/apk/debug/app-debug.apk > qa/apk-package.txt
-          cp app/build/outputs/apk/debug/app-debug.apk qa/Tycoon-WAHH-AIR-v1.1.apk
+          cp app/build/outputs/apk/debug/app-debug.apk qa/Tycoon-WAHH-AIR-v2.0.apk
       - uses: actions/upload-artifact@v4
         if: always()
         with:
